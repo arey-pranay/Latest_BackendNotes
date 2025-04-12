@@ -279,6 +279,67 @@ MONGO_URI=mongodb+srv://<username>:<pass>@cluster0.mongodb.net/myDB
 
 ---
 
+Body vs Params vs Query
+Body:
+
+The body is used to send data in a POST, PUT, PATCH request.
+
+It is typically used for complex data (e.g., user details in JSON format).
+
+In Express, you access the body using req.body.
+
+Example:
+
+json
+Copy
+Edit
+{
+  "name": "John Doe",
+  "email": "john@example.com"
+}
+Params:
+
+URL parameters are part of the URL and are typically used for identifying a specific resource.
+
+They are part of the route, and can be accessed using req.params.
+
+Example:
+
+js
+Copy
+Edit
+app.get('/user/:id', (req, res) => {
+  const { id } = req.params;
+  res.send(`User ID: ${id}`);
+});
+URL: /user/123
+
+Query:
+
+Query parameters are passed in the URL and are used to filter data or add additional options to the request.
+
+They are part of the URL after the ? and can be accessed via req.query.
+
+Example:
+
+js
+Copy
+Edit
+app.get('/search', (req, res) => {
+  const { name } = req.query;
+  res.send(`Searching for user: ${name}`);
+});
+URL: /search?name=John
+
+Key Differences
+Body: Used for complex data (sent with POST, PUT).
+
+Params: Part of the URL, typically used for specific resources (/user/:id).
+
+Query: Used for optional filters or parameters that are added to the URL (/search?name=John).
+
+---
+
 This README contains detailed step-by-step explanation and line-by-line comments. You can now run a full-stack backend project with MongoDB and Node.js confidently. 🎉
 
 https://youtu.be/vfaRzV3P92o?si=xQILZ0bGrGYD7PhR
