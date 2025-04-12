@@ -12,6 +12,54 @@ This guide walks you through setting up a complete backend with MongoDB using bo
 
 ---
 
+- Har category ke liye 2 chize chahiye- Ek route aur ek controller. 
+  - Routes folder me auth ke related routes ki ek file bnayi aur usme get(/signup,authController.signup) aur get("/login",authController.login) bnaya. Ek particular structure ke aage bhi hum route include kr skte hai, for example, app.use('/api/auth', authRoutes); to iske andr, the router will listen for parent/signup, and the parent is /api/auth. so the overall URL our route will listen for to call its controller will be `/api/auth/signup` and `api/auth/login`
+  - Controller folder me auth ke related controlling functions ki ek file bnayi aur usme se signupContr = (req,res)=>{..} aur loginContr = (req,res)=>{..} export kara
+  - Since getting all users protected route hota hai, we need to check the request ka authorization, after getting req and before sending res, so we put a middleware between req and res
+  - In the userRoutes file we export router.get('/getUserById', verifMiddleware, userController.getAllUsers);
+
+  - this is how a typical middleware in a file in the middleware folder looks like:
+  ```
+  export.verifMiddleWare = function (req, res, next) {
+  const token = req.header('Authorization')?.split(' ')[1]; // Get token
+  if (!token) return res.status(401).json({ msg: 'No token, authorization denied' });
+
+  try {
+    const decoded = jwt.verify(token, JWT_SECRET); // Verify token
+    req.user = decoded; // Attach to request
+    next(); // Continue
+  } catch (err) {
+    res.status(400).json({ msg: 'Invalid token' });
+  }
+  };
+  ```
+
+  - if the middleware returns next() then the controller will execute for the route
+  ```
+  exports.getUserById = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id); // Find user
+    if (!user) return res.status(404).json({ msg: 'User not found' });
+    res.json(user);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+  };
+  ```
+
+  - To do changes in the db, we need a Model to fit the DB _schema_ and structure, to this is how we create a model and export the schema
+  -  ```
+     const mongoose = require('mongoose'); // Import mongoose
+      Define schema
+     const userSchema = new mongoose.Schema({
+     name: { type: String, required: true }, // Name is required
+     email: { type: String, required: true, unique: true }, // Unique email
+     password: { type: String, required: true } // Hashed password
+     }, { timestamps: true }); // Add createdAt and updatedAt
+     module.exports = mongoose.model('User', userSchema); // Export model
+     ```
+## Now you can read the below written notes and the code for more understanding  
+
 ## 🟦 PART 1: MongoDB with Node.js + Express
 
 ### ✅ STEP 1: Project Setup
