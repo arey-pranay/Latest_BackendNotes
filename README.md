@@ -279,64 +279,59 @@ MONGO_URI=mongodb+srv://<username>:<pass>@cluster0.mongodb.net/myDB
 
 ---
 
-Body vs Params vs Query
-Body:
+---
 
-The body is used to send data in a POST, PUT, PATCH request.
+### Body vs Params vs Query**
 
-It is typically used for complex data (e.g., user details in JSON format).
+- **Body**: 
+  - The body is used to send data in a POST, PUT, or PATCH request.
+  - It is typically used for complex data (e.g., user details in JSON format).
+  - In Express, you access the body using `req.body`.
 
-In Express, you access the body using req.body.
+  **Example**:
+  ```json
+  {
+    "name": "John Doe",
+    "email": "john@example.com"
+  }
+  ```
+  When making a request like a POST to create a new user, you send this data in the body of the request.
 
-Example:
+- **Params**: 
+  - URL parameters are part of the URL and are typically used for identifying a specific resource.
+  - They are part of the route and can be accessed using `req.params`.
 
-json
-Copy
-Edit
-{
-  "name": "John Doe",
-  "email": "john@example.com"
-}
-Params:
+  **Example**:
+  ```js
+  app.get('/user/:id', (req, res) => {
+    const { id } = req.params;
+    res.send(`User ID: ${id}`);
+  });
+  ```
 
-URL parameters are part of the URL and are typically used for identifying a specific resource.
+  **URL**: `/user/123`  
+  In this case, `123` is a parameter passed as part of the URL to identify a specific user by their ID.
 
-They are part of the route, and can be accessed using req.params.
+- **Query**: 
+  - Query parameters are passed in the URL and are used to filter data or add additional options to the request.
+  - They are part of the URL after the `?` and can be accessed via `req.query`.
 
-Example:
+  **Example**:
+  ```js
+  app.get('/search', (req, res) => {
+    const { name } = req.query;
+    res.send(`Searching for user: ${name}`);
+  });
+  ```
 
-js
-Copy
-Edit
-app.get('/user/:id', (req, res) => {
-  const { id } = req.params;
-  res.send(`User ID: ${id}`);
-});
-URL: /user/123
+  **URL**: `/search?name=John`  
+  In this case, `name=John` is a query parameter used to filter or search for users.
 
-Query:
+### **Key Differences**
+- **Body**: Used for complex data (sent with POST, PUT).
+- **Params**: Part of the URL, typically used for specific resources (e.g., `/user/:id`).
+- **Query**: Used for optional filters or parameters that are added to the URL (e.g., `/search?name=John`).
 
-Query parameters are passed in the URL and are used to filter data or add additional options to the request.
-
-They are part of the URL after the ? and can be accessed via req.query.
-
-Example:
-
-js
-Copy
-Edit
-app.get('/search', (req, res) => {
-  const { name } = req.query;
-  res.send(`Searching for user: ${name}`);
-});
-URL: /search?name=John
-
-Key Differences
-Body: Used for complex data (sent with POST, PUT).
-
-Params: Part of the URL, typically used for specific resources (/user/:id).
-
-Query: Used for optional filters or parameters that are added to the URL (/search?name=John).
 
 ---
 
