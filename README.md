@@ -383,8 +383,8 @@ MONGO_URI=mongodb+srv://<username>:<pass>@cluster0.mongodb.net/myDB
 
 ---
 
-This README contains detailed step-by-step explanation and line-by-line comments. You can now run a full-stack backend project with MongoDB and Node.js confidently. 🎉
-
 https://youtu.be/vfaRzV3P92o?si=xQILZ0bGrGYD7PhR
 Chapter 8 - ![image](https://github.com/user-attachments/assets/18b6f4b5-5e6b-44e0-b183-5020707beeb3)
+Chapter 14 - ![image](https://github.com/user-attachments/assets/6e4a5f46-ac93-4fc7-9046-30b6c38e2b59)
+
 
