@@ -386,5 +386,13 @@ MONGO_URI=mongodb+srv://<username>:<pass>@cluster0.mongodb.net/myDB
 https://youtu.be/vfaRzV3P92o?si=xQILZ0bGrGYD7PhR
 Chapter 8 - ![image](https://github.com/user-attachments/assets/18b6f4b5-5e6b-44e0-b183-5020707beeb3)
 Chapter 14 - ![image](https://github.com/user-attachments/assets/6e4a5f46-ac93-4fc7-9046-30b6c38e2b59)
+Chapter 15 - ![image](https://github.com/user-attachments/assets/006ebf26-901f-4a4c-a3e2-9e95a9ce3cd7)
+Chapter 15 : Raw MongoDB library with node - ![image](https://github.com/user-attachments/assets/f1c3f538-66dd-4fe9-9d63-b3fcd725b3b7)
+
+Chapter 17 : Mongoose- ![image](https://github.com/user-attachments/assets/53483b15-7593-49ac-9d03-4b1b4e7ba38f)
+![image](https://github.com/user-attachments/assets/90fc4361-1fc7-4127-8a9b-1b029b515de0)
+
+Chapter 18 : MVC-R ![image](https://github.com/user-attachments/assets/95fa12fc-d487-4eef-ab1d-2ff45a59b21b)
+
 
 
