@@ -11,11 +11,15 @@ https://www.udemy.com/course/backend-master-class-golang-postgresql-kubernete
 ![image](https://github.com/user-attachments/assets/9c09ac9d-2924-4e95-8eff-12dbf24e24e6)
 ![image](https://github.com/user-attachments/assets/487c98fb-593f-4af2-993d-edf72b0c5e5c)
 ![image](https://github.com/user-attachments/assets/decd7c80-b8e9-49b1-8366-ed63be398f38)
+![image](https://github.com/user-attachments/assets/9e4bd41f-0381-409b-93ae-1384445a2457)
+
 
 ```
 docker pull postgres:12-alpine
 docker run --name postgres12 -p 5432:5432 -e POSTGRES_PASSWORD=secret -e POSTGRES_USER=root -d pos
 tgres:12-alpine
+docker exec -it postgres12 psql -U root
+// the -it is for telling docker to run as an interactive tti session, I think
 ```
 
 # 🔥 MongoDB Backend Mastery with Node.js, Express & Next.js
