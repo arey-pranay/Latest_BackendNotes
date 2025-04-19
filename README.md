@@ -18,8 +18,7 @@ https://www.udemy.com/course/backend-master-class-golang-postgresql-kubernete
 
 ```
 docker pull postgres:12-alpine
-docker run --name postgres12 -p 5432:5432 -e POSTGRES_PASSWORD=secret -e POSTGRES_USER=root -d pos
-tgres:12-alpine
+docker run --name postgres12 -p 5432:5432 -e POSTGRES_PASSWORD=secret -e POSTGRES_USER=root -d postgres:12-alpine
 docker exec -it postgres12 psql -U root
 // the -it is for telling docker to run as an interactive tti session, I think
 docker exec -it postgres12 /bin/sh // run from windows powershell instead of ubuntu command line terminal
@@ -32,15 +31,46 @@ docker logs postgres12
 
 `migrate create [extension] [directory] sequenceFlag schemaName`
 `PS C:\Users\arey_\simplebank> migrate create -ext sql -dir db/migration -seq init_schema`
+` migrate -path db/migration -database "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose up `
 
 ![image](https://github.com/user-attachments/assets/87a83ba9-8738-4cce-9a96-c9b505e93d80)
 ![image](https://github.com/user-attachments/assets/cf1adbd3-ddad-49a0-8f82-ecf00778466b)
+
+
 
 Create DB from ubuntu
 ` PS C:\Users\arey_\simplebank> docker exec -it postgres12 createdb --username=root --owner=root simple_bank  `
 
 ### Makefile  - To simplify commands. define the createdb, dropdb, etc general command for your container or DB
 
+```
+If you already have MinGW installed in Windows 7, just simply do the following:
+
+Make another copy of C:\MinGW\bin\mingw32-make.exe file in the same folder.
+Rename the file name from mingw32-make.exe to make.exe.
+Run make command again.
+Tested working in my laptop for above steps.
+```
+
+Makefile:
+```
+postgres:
+	docker run --name postgres12 -p 5432:5432 -e POSTGRES_PASSWORD=secret -e POSTGRES_USER=root -d postgres:12-alpine
+
+createdb:
+	docker exec -it postgres12 createdb --username=root --owner=root simple_bank
+
+dropdb:
+	docker exec -it postgres12 dropdb simple_bank
+
+migrateup:
+	 migrate -path db/migration -database "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose up
+
+migratedown:
+	 migrate -path db/migration -database "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose down
+
+.PHONY: postgres createdb dropdb migrateup migratedown
+```
 
 ## DB diagram.io command for Postgres code generation ![Docs of DBML](https://dbml.dbdiagram.io/docs/)
 
