@@ -22,9 +22,23 @@ docker run --name postgres12 -p 5432:5432 -e POSTGRES_PASSWORD=secret -e POSTGRE
 tgres:12-alpine
 docker exec -it postgres12 psql -U root
 // the -it is for telling docker to run as an interactive tti session, I think
+docker exec -it postgres12 /bin/sh // run from windows powershell instead of ubuntu command line terminal
 quit console by \q command
 docker logs postgres12
 ```
+
+## Migrate DB
+![image](https://github.com/user-attachments/assets/3e46cdd7-40d5-458e-91db-465518eca60d)
+
+`migrate create [extension] [directory] sequenceFlag schemaName`
+`PS C:\Users\arey_\simplebank> migrate create -ext sql -dir db/migration -seq init_schema`
+
+![image](https://github.com/user-attachments/assets/87a83ba9-8738-4cce-9a96-c9b505e93d80)
+![image](https://github.com/user-attachments/assets/cf1adbd3-ddad-49a0-8f82-ecf00778466b)
+
+Create DB from ubuntu
+` # createdb --username=root --owner=root simple_bank  `
+
 
 ## DB diagram.io command for Postgres code generation ![Docs of DBML](https://dbml.dbdiagram.io/docs/)
 
