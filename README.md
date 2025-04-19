@@ -5,6 +5,14 @@ https://www.udemy.com/course/backend-master-class-golang-postgresql-kubernete
 ### dbdiagram.io
 ![image](https://github.com/user-attachments/assets/61684fe7-380a-454a-b3be-2695a0523356)
 
+### docker 
+
+![image](https://github.com/user-attachments/assets/ef66820b-7957-4d65-92de-af7e531ad3c1)
+![image](https://github.com/user-attachments/assets/9c09ac9d-2924-4e95-8eff-12dbf24e24e6)
+![image](https://github.com/user-attachments/assets/487c98fb-593f-4af2-993d-edf72b0c5e5c)
+![image](https://github.com/user-attachments/assets/decd7c80-b8e9-49b1-8366-ed63be398f38)
+
+
 
 # 🔥 MongoDB Backend Mastery with Node.js, Express & Next.js
 
