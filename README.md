@@ -37,7 +37,9 @@ docker logs postgres12
 ![image](https://github.com/user-attachments/assets/cf1adbd3-ddad-49a0-8f82-ecf00778466b)
 
 Create DB from ubuntu
-` # createdb --username=root --owner=root simple_bank  `
+` PS C:\Users\arey_\simplebank> docker exec -it postgres12 createdb --username=root --owner=root simple_bank  `
+
+### Makefile  - To simplify commands. define the createdb, dropdb, etc general command for your container or DB
 
 
 ## DB diagram.io command for Postgres code generation ![Docs of DBML](https://dbml.dbdiagram.io/docs/)
