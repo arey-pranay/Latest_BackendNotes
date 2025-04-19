@@ -12,6 +12,8 @@ https://www.udemy.com/course/backend-master-class-golang-postgresql-kubernete
 ![image](https://github.com/user-attachments/assets/487c98fb-593f-4af2-993d-edf72b0c5e5c)
 ![image](https://github.com/user-attachments/assets/decd7c80-b8e9-49b1-8366-ed63be398f38)
 ![image](https://github.com/user-attachments/assets/9e4bd41f-0381-409b-93ae-1384445a2457)
+![image](https://github.com/user-attachments/assets/520d3d94-a769-4899-9ad9-361a3cb19e4f)
+
 
 
 ```
@@ -20,6 +22,49 @@ docker run --name postgres12 -p 5432:5432 -e POSTGRES_PASSWORD=secret -e POSTGRE
 tgres:12-alpine
 docker exec -it postgres12 psql -U root
 // the -it is for telling docker to run as an interactive tti session, I think
+quit console by \q command
+docker logs postgres12
+```
+
+## DB diagram.io command for Postgres code generation ![Docs of DBML](https://dbml.dbdiagram.io/docs/)
+
+```
+Table accounts as A {
+  id bigserial [pk]
+  owner varchar [not null]
+  balance bigint [not null]
+  currency varchar [not null]
+  created_at timestamptz [not null, default : `now()`] 
+  
+  Indexes {
+    owner
+  }
+}
+
+Table entries {
+  id bigserial [pk]
+  account_id bigint [ref: >A.id, not null]
+  amount bigint [not null, note: 'can be negative or positive']
+  created_at timestamptz [not null, default: `now()`]
+  
+  Indexes {
+    account_id
+  }
+}
+
+Table transfers {
+  id bigserial [pk]
+  from_account_id bigint [ref:>A.id, not null]
+  to_account_id bigint [ref:>A.id, not null]
+  amount bigint [not null, note:'must be positive']
+  created_at timestamptz [not null, default:`now()`]
+
+  Indexes {
+    from_account_id
+    to_account_id
+    (from_account_id,to_account_id)
+  }
+}
 ```
 
 # 🔥 MongoDB Backend Mastery with Node.js, Express & Next.js
