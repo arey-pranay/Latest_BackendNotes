@@ -113,6 +113,37 @@ Table transfers {
 }
 ```
 
+## CRUD
+
+
+Multiple Options: 
+![image](https://github.com/user-attachments/assets/075375dc-25d9-4e29-bc78-ed28b5631ddb)
+
+
+### https://sqlc.dev/ SQLC
+
+`go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest`
+`sqlc init`in the project folder will create a .yaml file, update the file according to this file
+![image](https://github.com/user-attachments/assets/7456095a-9586-48a1-a848-05cda089a384)
+
+now update the sqlc file (of version 1.4.0 tag from github README)
+
+```
+version: "1"
+packages:
+  - name: "db"
+    path: "/db/sqlc"
+    queries: "./db/query/"
+    schema: "./db/migration/"
+    engine: "postgresql"
+    emit_json_tags: true
+    emit_prepared_queries: false
+    emit_interface: false
+    emit_exact_table_names: false
+
+```
+
+
 # 🔥 MongoDB Backend Mastery with Node.js, Express & Next.js
 
 This guide walks you through setting up a complete backend with MongoDB using both Node.js/Express and Next.js API routes. It includes CRUD, Authentication (JWT), and MongoDB Atlas integration.
