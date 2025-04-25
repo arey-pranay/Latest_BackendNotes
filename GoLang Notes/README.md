@@ -131,6 +131,9 @@ Use for closing DBs, files, etc.
 
 ### 🔸 Maps
 
+![image](https://github.com/user-attachments/assets/3a64b56f-9297-475f-a6e7-ab6817f55478)
+
+
 ```go
 m := make(map[string]int)
 m["apples"] = 5
