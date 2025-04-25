@@ -1,11 +1,48 @@
 ![image](https://github.com/user-attachments/assets/805e8628-21aa-4e20-a076-4d75888cc088)
 
-# Functions AND Error(s)
+## Functions AND Error(s)
 ![image](https://github.com/user-attachments/assets/e5df74eb-b244-4d37-af7a-0a0faebbbb01)
 ![image](https://github.com/user-attachments/assets/bcf24d13-022b-4c3d-b0a8-271ce60f1e54)
 
-# Non-ASCII characters in string
+## Non-ASCII characters in string
 ![image](https://github.com/user-attachments/assets/307d68ab-71f5-4246-9450-7c5a00aedb95)
+![image](https://github.com/user-attachments/assets/cabc8bb5-ae9c-4d13-abff-664aa0ae68c7)
+
+## Runes - with single quotes ''
+![image](https://github.com/user-attachments/assets/a66116f0-b406-44e3-8dbb-7d2a95949298)
+
+## Structs
+![image](https://github.com/user-attachments/assets/0e08d132-a255-4367-9e6e-ff65877f26a3)
+
+## Interfaces usage
+![image](https://github.com/user-attachments/assets/2b8e7900-8ad7-42f3-b58a-aa250de0393c)
+
+## Pointers
+![image](https://github.com/user-attachments/assets/ee8bfa29-11a9-4ed1-8697-a029559f425b)
+
+## Mutex amazinnnn and Concurrency (Not exactly the same as parallel execution), using `go` keyword
+![image](https://github.com/user-attachments/assets/5b0ff4f8-c6c8-40b1-bd9e-e64e0dabc05c)
+
+Read Write Mutexes example:
+![image](https://github.com/user-attachments/assets/ac52c8fc-8566-4211-81ad-d8c2f5da98ce)
+
+Time comparison, the dependence of heavy functions concurrency, on the number of cores in the CPU of the system.
+![image](https://github.com/user-attachments/assets/35f592a4-4aaf-432a-9513-da843a18c265)
+
+## Channel
+![image](https://github.com/user-attachments/assets/056c5d11-f28d-402e-9f18-d4a6b47e4cc6)
+
+Buffered Channel (includes a capacity-defined buffer)
+![image](https://github.com/user-attachments/assets/42693fb5-f046-4aaa-9839-41c70f52d056)
+
+`select` is the `switch-case` alternative version for the Channels
+![image](https://github.com/user-attachments/assets/de0af3df-37bd-4a4b-ab0b-9400c9e4000d)
+
+## Generics
+![image](https://github.com/user-attachments/assets/75ff69ff-8b09-497d-97a8-26749dc2d410)
+
+![image](https://github.com/user-attachments/assets/4129676e-30eb-4970-8e11-a4e7e7596dad)
+
 
 
 ---
