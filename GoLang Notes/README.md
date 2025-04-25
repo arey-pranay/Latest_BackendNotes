@@ -1,6 +1,12 @@
 ![image](https://github.com/user-attachments/assets/805e8628-21aa-4e20-a076-4d75888cc088)
+
+# Functions AND Error(s)
 ![image](https://github.com/user-attachments/assets/e5df74eb-b244-4d37-af7a-0a0faebbbb01)
 ![image](https://github.com/user-attachments/assets/bcf24d13-022b-4c3d-b0a8-271ce60f1e54)
+
+# Non-ASCII characters in string
+![image](https://github.com/user-attachments/assets/307d68ab-71f5-4246-9450-7c5a00aedb95)
+
 
 ---
 
