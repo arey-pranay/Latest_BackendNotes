@@ -7,6 +7,8 @@ https://www.udemy.com/course/backend-master-class-golang-postgresql-kubernete
 
 ## docker 
 
+
+
 ![image](https://github.com/user-attachments/assets/ef66820b-7957-4d65-92de-af7e531ad3c1)
 ![image](https://github.com/user-attachments/assets/9c09ac9d-2924-4e95-8eff-12dbf24e24e6)
 ![image](https://github.com/user-attachments/assets/487c98fb-593f-4af2-993d-edf72b0c5e5c)
@@ -25,6 +27,12 @@ docker exec -it postgres12 /bin/sh // run from windows powershell instead of ubu
 quit console by \q command
 docker logs postgres12
 ```
+
+## Docker Compose . .yaml File (yet another markup language)
+![image](https://github.com/user-attachments/assets/1192bbd8-a1ac-4d4c-9419-4a4713103efc)
+
+## Dockerfile
+![image](https://github.com/user-attachments/assets/16d7ea9f-cf12-4121-947d-cd582ea34c86)
 
 ## Migrate DB
 ![image](https://github.com/user-attachments/assets/3e46cdd7-40d5-458e-91db-465518eca60d)
